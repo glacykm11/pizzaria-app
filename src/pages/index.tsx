@@ -5,6 +5,7 @@ import pizzariaComFundo from "../assets/pizzaria-com-fundo.png";
 import styled from "styled-components";
 import Image from "next/image";
 import Button from "@/components/Button";
+import fundoPizza2 from "../assets/background-second-page.png";
 
 export default function Home() {
   return (
@@ -12,11 +13,22 @@ export default function Home() {
       <Main>
         <FirstPage>
           <Navbar />
-          <Image src={pizzaComFundo} alt="pizza" width={1000} />
+          <Image src={pizzaComFundo} alt="pizza" style={{ width: "100%" }} />
         </FirstPage>
         <SecondPage>
-          <Image src={pizzariaComFundo} alt="pizza" width={500} />
+          <Image
+            src={fundoPizza2}
+            alt="pizza"
+            style={{ position: "absolute", width: "100%" }}
+          />
+
           <TextWrapper>
+            <Image
+              src={pizzariaComFundo}
+              alt="pizza"
+              width={500}
+              style={{ position: "relative" }}
+            />
             <Title>
               <Underscore>Nossa Pizzaria</Underscore>
             </Title>
@@ -40,23 +52,16 @@ const Main = styled.main``;
 
 const FirstPage = styled.div`
   background-color: var(--primary-color);
-  height: 45rem;
+
   padding: 0 34px;
   text-align: center;
 `;
 
-const SecondPage = styled.div`
-  background-color: var(--secondary-color);
-  height: 45rem;
-  padding: 0 34px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+const SecondPage = styled.div``;
 
 const TextWrapper = styled.div`
   width: 40%;
+  position: relative;
 `;
 
 const Title = styled.h2``;
