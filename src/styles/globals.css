@@ -1,10 +1,20 @@
 :root {
-  --primary-color: #FA1B37;
-  --secondary-color: #F8C700;
+  --primary-color: #fa1b37;
+  --secondary-color: #f8c700;
+  --terciary-color: #221b1b;
+  --white-color: #fff;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Nunito";
+}
+
+html {
+  height: 100%;
+}
+body {
+  min-height: 100vh;
 }
