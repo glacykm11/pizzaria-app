@@ -13,42 +13,43 @@ export default function Home() {
       <Main>
         <FirstPage>
           <Navbar />
-          <Image src={pizzaComFundo} alt="pizza" style={{ width: "100%" }} />
+          <Image src={pizzaComFundo} alt="pizza" style={{ objectFit: 'contain', minWidth: '500px', minHeight: '400px' }} />
         </FirstPage>
         <SecondPage>
           <Image
             src={fundoPizza2}
             alt="pizza"
-            style={{ position: "absolute", width: "100%" }}
+            style={{ backgroundImage: `url(${fundoPizza2})`, width: '100%', position: 'relative' }}
           />
 
-          <TextWrapper>
+          <ContentWrapper>
             <Image
               src={pizzariaComFundo}
               alt="pizza"
               width={500}
-              style={{ position: "relative" }}
+              style={{ backgroundImage: `url(${pizzariaComFundo})` }}
             />
-            <Title>
-              <Underscore>Nossa Pizzaria</Underscore>
-            </Title>
-            <Text>
-              Desde 1980 produzindo as melhores pizzas da região. Nosso rodízio
-              oferece mais de 60 sabores entre pizzas, massas e porções.
-            </Text>
-            <Text>
-              Você pode escolher se prefere o serviço à la carte, ou encomendar
-              nossas deliciosas pizzas pelo nosso delivery.
-            </Text>
-            <Button color={"secondary"} />
-          </TextWrapper>
+            <TextWrapper>
+              <Title><u>Nossa Pizzaria</u></Title>
+              <Text>
+                Desde 1980 produzindo as melhores pizzas da região. Nosso rodízio
+                oferece mais de 60 sabores entre pizzas, massas e porções.
+              </Text>
+              <Text>
+                Você pode escolher se prefere o serviço à la carte, ou encomendar
+                nossas deliciosas pizzas pelo nosso delivery.
+              </Text>
+              <Button color={"secondary"} />
+            </TextWrapper>
+          </ContentWrapper>
         </SecondPage>
       </Main>
     </>
   );
 }
 
-const Main = styled.main``;
+const Main = styled.main`
+`;
 
 const FirstPage = styled.div`
   background-color: var(--primary-color);
@@ -59,16 +60,27 @@ const FirstPage = styled.div`
 
 const SecondPage = styled.div``;
 
-const TextWrapper = styled.div`
-  width: 40%;
-  position: relative;
+const ContentWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 34rem 28rem;
+  grid-template-rows: 1fr;
+  position: absolute;
+  top: 63rem;
+  left: 20rem;
 `;
 
-const Title = styled.h2``;
+const TextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
 
-const Underscore = styled.u``;
+const Title = styled.h2`
+  
+`;
 
 const Text = styled.p`
+  font-weight: bold;
   color: var(--terciary-color);
   font-size: 15px;
   text-align: justify;

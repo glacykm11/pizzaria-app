@@ -11,10 +11,3 @@
   margin: 0;
   font-family: "Nunito";
 }
-
-html {
-  height: 100%;
-}
-body {
-  min-height: 100vh;
-}
