@@ -27,5 +27,5 @@ const NavbarWrapper = styled.div`
 
 const NavbarOption = styled.p`
   color: var(--white-color);
-  font-size: 14px;
+  font-size: 20px;
 `;
