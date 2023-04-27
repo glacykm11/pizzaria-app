@@ -12,10 +12,11 @@ const ButtonStyled = styled.button<{ color: "primary" | "secondary" }>`
   color: ${(props) =>
     props.color === "primary" ? "var(--primary-color)" : "var(--white-color)"};
   font-size: 14px;
-  height: 25px;
-  width: 105px;
+  height: 3rem;
+  width: 12rem;
   text-align: center;
   font-weight: bold;
+  font-size: 20px;
   cursor: pointer;
   background-color: ${(props) =>
     props.color === "primary"

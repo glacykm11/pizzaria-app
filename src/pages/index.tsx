@@ -10,50 +10,43 @@ import fundoPizza2 from "../assets/background-second-page.png";
 export default function Home() {
   return (
     <>
-      <Main>
-        <FirstPage>
-          <Navbar />
-          <Image src={pizzaComFundo} alt="pizza" style={{ objectFit: 'contain', minWidth: '500px', minHeight: '400px' }} />
-        </FirstPage>
-        <SecondPage>
+      <FirstPage>
+        <Navbar />
+        <Image src={pizzaComFundo} alt="pizza" style={{ objectFit: 'contain', minWidth: '500px', minHeight: '400px' }} />
+      </FirstPage>
+      <SecondPage>
+        <Image
+          src={fundoPizza2}
+          alt="pizza"
+          style={{ backgroundImage: `url(${fundoPizza2})`, width: '100%', position: 'relative' }}
+        />
+        <ContentWrapper>
           <Image
-            src={fundoPizza2}
+            src={pizzariaComFundo}
             alt="pizza"
-            style={{ backgroundImage: `url(${fundoPizza2})`, width: '100%', position: 'relative' }}
+            width={500}
+            style={{ backgroundImage: `url(${pizzariaComFundo})` }}
           />
-
-          <ContentWrapper>
-            <Image
-              src={pizzariaComFundo}
-              alt="pizza"
-              width={500}
-              style={{ backgroundImage: `url(${pizzariaComFundo})` }}
-            />
-            <TextWrapper>
-              <Title><u>Nossa Pizzaria</u></Title>
-              <Text>
-                Desde 1980 produzindo as melhores pizzas da região. Nosso rodízio
-                oferece mais de 60 sabores entre pizzas, massas e porções.
-              </Text>
-              <Text>
-                Você pode escolher se prefere o serviço à la carte, ou encomendar
-                nossas deliciosas pizzas pelo nosso delivery.
-              </Text>
-              <Button color={"secondary"} />
-            </TextWrapper>
-          </ContentWrapper>
-        </SecondPage>
-      </Main>
+          <TextWrapper>
+            <Title>Nossa Pizzaria</Title>
+            <Text>
+              Desde 1980 produzindo as melhores pizzas da região. Nosso rodízio
+              oferece mais de 60 sabores entre pizzas, massas e porções.
+            </Text>
+            <Text>
+              Você pode escolher se prefere o serviço à la carte, ou encomendar
+              nossas deliciosas pizzas pelo nosso delivery.
+            </Text>
+            <Button color={"secondary"} />
+          </TextWrapper>
+        </ContentWrapper>
+      </SecondPage>
     </>
   );
 }
 
-const Main = styled.main`
-`;
-
 const FirstPage = styled.div`
   background-color: var(--primary-color);
-
   padding: 0 34px;
   text-align: center;
 `;
@@ -76,13 +69,15 @@ const TextWrapper = styled.div`
 `;
 
 const Title = styled.h2`
-  
+  font-size: 40px;
+  border-bottom: 4px solid black;
+  width: 16rem;
 `;
 
 const Text = styled.p`
-  font-weight: bold;
   color: var(--terciary-color);
-  font-size: 15px;
+  font-size: 20px;
   text-align: justify;
   margin: 16px 0;
+  line-height: 35px;
 `;
