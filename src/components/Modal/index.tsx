@@ -32,6 +32,7 @@ const ModalContent = styled.div`
     margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
+    border-radius: 8px;
     width: 80%; 
 `;
 
