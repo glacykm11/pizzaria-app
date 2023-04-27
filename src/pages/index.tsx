@@ -56,7 +56,9 @@ const FirstPage = styled.div`
   text-align: center;
 `;
 
-const SecondPage = styled.div``;
+const SecondPage = styled.div`
+  background-color: var(--secondary-color);
+`;
 
 const ContentWrapper = styled.div`
   display: grid;
