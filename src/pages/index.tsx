@@ -6,12 +6,16 @@ import styled from "styled-components";
 import Image from "next/image";
 import Button from "@/components/Button";
 import fundoPizza2 from "../assets/background-second-page.png";
+import Modal from "@/components/Modal";
+import React from "react";
 
 export default function Home() {
+  const [openModal, setOpenModal] = React.useState(false);
+  
   return (
     <>
       <FirstPage>
-        <Navbar />
+        <Navbar onClick={() => setOpenModal(true)}/>
         <Image src={pizzaComFundo} alt="pizza" style={{ objectFit: 'contain', minWidth: '500px', minHeight: '400px' }} />
       </FirstPage>
       <SecondPage>
@@ -37,7 +41,8 @@ export default function Home() {
               Você pode escolher se prefere o serviço à la carte, ou encomendar
               nossas deliciosas pizzas pelo nosso delivery.
             </Text>
-            <Button color={"secondary"} />
+            <Button color={"secondary"} onClick={() => setOpenModal(true)}/>
+            <Modal open={openModal} onClick={() => setOpenModal(false)}/>
           </TextWrapper>
         </ContentWrapper>
       </SecondPage>

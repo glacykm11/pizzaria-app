@@ -1,14 +1,16 @@
 import styled from "styled-components";
 import Button from "../Button";
+import React from "react";
 
-const Navbar = () => {
+const Navbar: React.FC<{ onClick: any }> = (props) => {
+  
   return (
     <NavbarWrapper>
       <NavbarOption>Pizzaria</NavbarOption>
       <NavbarOption>Home</NavbarOption>
       <NavbarOption>Sobre nós</NavbarOption>
       <NavbarOption>Onde Estamos</NavbarOption>
-      <Button color={"primary"} />
+      <Button color={"primary"} onClick={props.onClick}/>
     </NavbarWrapper>
   );
 };
