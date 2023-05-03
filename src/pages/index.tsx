@@ -1,11 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Navbar from "@/components/Navbar";
-// import pizzaComFundo from "../assets/pizza-com-fundo.png";
-// import pizzariaComFundo from "../assets/pizzaria-com-fundo.png";
 import styled from "styled-components";
-import Image from "next/image";
 import Button from "@/components/Button";
-// import fundoPizza2 from "../assets/background-second-page.png";
 import Modal from "@/components/Modal";
 import React from "react";
 
