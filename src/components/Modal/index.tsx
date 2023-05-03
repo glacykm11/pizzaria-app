@@ -1,12 +1,21 @@
 import React from "react";
 import styled from "styled-components";
+import Card from "../Card";
 
 const Modal: React.FC<{ open: boolean, onClick: any }> = (props) => {   
     return (
         <ModalStyled open={props.open}>
             <ModalContent>
                 <ModalClose src="/assets/icons/close-button.svg" onClick={props.onClick}/>
-                <h2>Escolha sua pizza</h2>
+                <ModalTitle><img src="/assets/icons/pizza-icon.svg"/><h2>Escolha sua pizza</h2></ModalTitle>
+                <Cards>
+                    <img src="/assets/icons/arrow-left.svg"/>
+                    <Card sabor={"Calabresa"} fatias={"8"}/>
+                    <Card sabor={"Calabresa"} fatias={"4"} />    
+                    <Card sabor={"Calabresa"} fatias={"6"} />
+                    <Card sabor={"Calabresa"} fatias={"8"} />  
+                    <img src="/assets/icons/arrow-right.svg"/>
+                </Cards>
             </ModalContent>
         </ModalStyled>
     );
@@ -22,7 +31,7 @@ const ModalStyled = styled.div<{ open: boolean }>`
     top: 0;
     width: 100%; 
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4); 
 `;
@@ -44,3 +53,17 @@ const ModalClose = styled.img`
     font-weight: bold;
     cursor: pointer;
 `;
+
+const Cards = styled.div`
+    margin: 8px 0;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+`
+
+const ModalTitle = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 8px;
+`
