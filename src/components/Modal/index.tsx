@@ -5,8 +5,8 @@ const Modal: React.FC<{ open: boolean, onClick: any }> = (props) => {
     return (
         <ModalStyled open={props.open}>
             <ModalContent>
-                <ModalClose onClick={props.onClick}>&times;</ModalClose>
-                <p>Some text in the Modal..</p>
+                <ModalClose src="/assets/icons/close-button.svg" onClick={props.onClick}/>
+                <h2>Escolha sua pizza</h2>
             </ModalContent>
         </ModalStyled>
     );
@@ -36,7 +36,8 @@ const ModalContent = styled.div`
     width: 80%; 
 `;
 
-const ModalClose = styled.span`
+const ModalClose = styled.img`
+    display: inline;
     color: #aaa;
     float: right;
     font-size: 28px;
