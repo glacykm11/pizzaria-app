@@ -23,6 +23,7 @@ const NavbarWrapper = styled.div`
   justify-content: space-between;
   padding: 32px 0;
   border-bottom: 1px var(--white-color) solid;
+  background-color: var(--primary-color);
 `;
 
 const NavbarOption = styled.p`
