@@ -1,6 +1,7 @@
+import { FC } from "react";
 import styled from "styled-components";
 
-const Card: React.FC<{ sabor: string, fatias: string, url: string }> = (props) => {
+const Card: FC<{ sabor: string, fatias: string, url: string }> = (props) => {
   return <CardStyled>
     <ImageWrapper>
       <CardImage src={props.url} />

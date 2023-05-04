@@ -1,18 +1,9 @@
-import React from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import Card from "../Card";
+import { PIZZAS } from "@/utils/constants";
 
-const Modal: React.FC<{ open: boolean, onClick: any }> = (props) => {
-    const pizzas = [
-        { sabor: 'Calabresa', id: 1, fatias: '8', url: '/assets/images/pizza-calabresa.png' },
-        { sabor: 'Mussarela', id: 2, fatias: '8', url: '/assets/images/pizza-calabresa.png' },
-        { sabor: 'Portuguesa', id: 3, fatias: '6', url: '/assets/images/pizza-calabresa.png' },
-    ];
-
-    const listCards = pizzas.map(pizza =>
-        <Card key={pizza.id} sabor={pizza.sabor} fatias={pizza.fatias} url={pizza.url}></Card>
-    );
-
+const Modal: FC<{ open: boolean, onClick: () => void }> = (props) => {
     return (
         <ModalStyled open={props.open}>
             <ModalContent>
@@ -20,7 +11,11 @@ const Modal: React.FC<{ open: boolean, onClick: any }> = (props) => {
                 <ModalTitle><img src="/assets/icons/pizza-icon.svg" /><h2>Escolha sua pizza</h2></ModalTitle>
                 <Cards>
                     <img src="/assets/icons/arrow-left.svg" />
-                    {listCards}
+                    {
+                        PIZZAS.map(pizza =>
+                            <Card key={pizza.id} sabor={pizza.sabor} fatias={pizza.fatias} url={pizza.url}></Card>
+                        )
+                    }
                     <img src="/assets/icons/arrow-right.svg" />
                 </Cards>
             </ModalContent>

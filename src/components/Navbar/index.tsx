@@ -1,16 +1,16 @@
 import styled from "styled-components";
 import Button from "../Button";
-import React from "react";
+import { FC } from "react";
 
-const Navbar: React.FC<{ onClick: any }> = (props) => {
-  
+const Navbar: FC<{ onClick: () => void }> = (props) => {
+
   return (
     <NavbarWrapper>
       <NavbarOption>Pizzaria</NavbarOption>
       <NavbarOption>Home</NavbarOption>
       <NavbarOption>Sobre nós</NavbarOption>
       <NavbarOption>Onde Estamos</NavbarOption>
-      <Button color={"primary"} onClick={props.onClick}/>
+      <Button color={"primary"} onClick={props.onClick} />
     </NavbarWrapper>
   );
 };
@@ -21,7 +21,7 @@ const NavbarWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 32px 0;
+  padding: 32px;
   border-bottom: 1px var(--white-color) solid;
   background-color: var(--primary-color);
 `;

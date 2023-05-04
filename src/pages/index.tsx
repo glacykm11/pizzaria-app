@@ -3,10 +3,10 @@ import Navbar from "@/components/Navbar";
 import styled from "styled-components";
 import Button from "@/components/Button";
 import Modal from "@/components/Modal";
-import React from "react";
+import { useState } from "react";
 
 export default function Home() {
-  const [openModal, setOpenModal] = React.useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <>
