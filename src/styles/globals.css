@@ -3,6 +3,7 @@
   --secondary-color: #f8c700;
   --terciary-color: #221b1b;
   --white-color: #fff;
+  --gray-color: #d9d9d9;
 }
 
 * {
@@ -11,4 +12,3 @@
   margin: 0;
   font-family: "Nunito";
 }
-
