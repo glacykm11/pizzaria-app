@@ -2,12 +2,14 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import Card from "../Card";
 import { PIZZAS } from "@/utils/constants";
+import Input from "../Input";
 
 const Modal: FC<{ open: boolean, onClick: () => void }> = (props) => {
     return (
         <ModalStyled open={props.open}>
             <ModalContent>
                 <ModalClose src="/assets/icons/close-button.svg" onClick={props.onClick} />
+
                 <ModalTitle><img src="/assets/icons/pizza-icon.svg" /><h2>Escolha sua pizza</h2></ModalTitle>
                 <Cards>
                     <img src="/assets/icons/arrow-left.svg" />
@@ -18,6 +20,18 @@ const Modal: FC<{ open: boolean, onClick: () => void }> = (props) => {
                     }
                     <img src="/assets/icons/arrow-right.svg" />
                 </Cards>
+
+                <FormDelivery>
+                    <div>
+                        <ModalTitle><img src="/assets/icons/delivery-icon.svg" /><h2>Forma de entrega</h2></ModalTitle>
+                        <Input label={'Forma de entrega'} />
+                        <Input label={'Endereço'} />
+                    </div>
+                    <div>
+                        <ModalTitle><img src="/assets/icons/payment-icon.svg" /><h2>Pagamento</h2></ModalTitle>
+                        <Input label={'Forma de pagamento'} />
+                    </div>
+                </FormDelivery>
             </ModalContent>
         </ModalStyled>
     );
@@ -41,7 +55,7 @@ const ModalStyled = styled.div<{ open: boolean }>`
 const ModalContent = styled.div`
     background-color: #fefefe;
     margin: 15% auto; 
-    padding: 20px;
+    padding: 24px;
     border: 1px solid #888;
     border-radius: 8px;
     width: 80%; 
@@ -68,4 +82,10 @@ const ModalTitle = styled.div`
     display: flex;
     align-items: center;
     gap: 8px;
+    margin: 16px 0;
+`
+
+const FormDelivery = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 `
