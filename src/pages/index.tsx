@@ -30,7 +30,7 @@ export default function Home() {
             Você pode escolher se prefere o serviço à la carte, ou encomendar
             nossas deliciosas pizzas pelo nosso delivery.
           </Text>
-          <Button color={"secondary"} onClick={() => setOpenModal(true)} />
+          <Button color={"secondary"} onClick={() => setOpenModal(true)} title={"Fazer pedido"} />
           <Modal open={openModal} onClick={() => setOpenModal(false)} />
         </TextWrapper>
       </SecondPage>

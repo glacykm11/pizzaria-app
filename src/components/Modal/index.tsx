@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Card from "../Card";
 import { PIZZAS } from "@/utils/constants";
 import Input from "../Input";
+import Button from "../Button";
 
 const Modal: FC<{ open: boolean, onClick: () => void }> = (props) => {
     return (
@@ -32,6 +33,10 @@ const Modal: FC<{ open: boolean, onClick: () => void }> = (props) => {
                         <Input label={'Forma de pagamento'} />
                     </div>
                 </FormDelivery>
+
+                <div>
+                    <Button title={"Finalizar pedido"} color={"primary"} onClick={undefined}></Button>
+                </div>
             </ModalContent>
         </ModalStyled>
     );

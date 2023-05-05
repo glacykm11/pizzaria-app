@@ -10,7 +10,7 @@ const Navbar: FC<{ onClick: () => void }> = (props) => {
       <NavbarOption>Home</NavbarOption>
       <NavbarOption>Sobre nós</NavbarOption>
       <NavbarOption>Onde Estamos</NavbarOption>
-      <Button color={"primary"} onClick={props.onClick} />
+      <Button color={"primary"} onClick={props.onClick} title={"Fazer pedido"} />
     </NavbarWrapper>
   );
 };

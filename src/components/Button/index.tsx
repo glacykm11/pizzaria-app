@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const Button: React.FC<{ color: "primary" | "secondary", onClick: any }> = (props) => {
-  return <ButtonStyled onClick={props.onClick} color={props.color}>Fazer Pedido</ButtonStyled>;
+const Button: React.FC<{ title: string, color: "primary" | "secondary", onClick: any }> = (props) => {
+  return <ButtonStyled onClick={props.onClick} color={props.color}>{props.title}</ButtonStyled>;
 };
 
 export default Button;
