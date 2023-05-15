@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { useEffect, useRef, FC } from "react";
 import styled from "styled-components";
 import Card from "../Card";
 import { PIZZAS } from "@/utils/constants";
@@ -6,10 +6,25 @@ import Input from "../Input";
 import Button from "../Button";
 
 const Modal: FC<{ open: boolean, onClick: () => void }> = (props) => {
+    const modalRef = useRef<HTMLDivElement>(null);
+    const buttonRef = useRef<HTMLImageElement>(null);
+
+    useEffect(() => {
+        const modal = modalRef.current;
+        const closeButton = buttonRef.current;
+
+        if (!props.open) modal!.style.display = 'none';
+        if (props.open) modal!.style.display = 'block';
+
+        closeButton?.addEventListener('click', () => {
+            modal!.style.display = 'none';
+        });
+    }, [props.open])
+
     return (
-        <ModalStyled open={props.open}>
+        <ModalStyled ref={modalRef}>
             <ModalContent>
-                <ModalClose src="/assets/icons/close-button.svg" onClick={props.onClick} />
+                <ModalClose src="/assets/icons/close-button.svg" ref={buttonRef} onClick={props.onClick} />
 
                 <ModalTitle><img src="/assets/icons/pizza-icon.svg" /><h2>Escolha sua pizza</h2></ModalTitle>
                 <Cards>
@@ -35,7 +50,7 @@ const Modal: FC<{ open: boolean, onClick: () => void }> = (props) => {
                 </FormDelivery>
 
                 <div>
-                    <Button title={"Finalizar pedido"} color={"primary"} onClick={undefined}></Button>
+                    <Button title={"Finalizar pedido"} color={"primary"}></Button>
                 </div>
             </ModalContent>
         </ModalStyled>
@@ -44,8 +59,7 @@ const Modal: FC<{ open: boolean, onClick: () => void }> = (props) => {
 
 export default Modal;
 
-const ModalStyled = styled.div<{ open: boolean }>`
-    display: ${(props) => props.open ? 'block' : 'none'}; 
+const ModalStyled = styled.div`
     position: fixed;
     z-index: 1;
     left: 0;
