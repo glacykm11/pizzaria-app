@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Button: React.FC<{ title: string, color: "primary" | "secondary", onClick: any }> = (props) => {
+const Button: React.FC<{ title: string, color: "primary" | "secondary", onClick?: () => void }> = (props) => {
   return <ButtonStyled onClick={props.onClick} color={props.color}>{props.title}</ButtonStyled>;
 };
 
