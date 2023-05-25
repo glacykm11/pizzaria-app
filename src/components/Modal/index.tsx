@@ -12,9 +12,8 @@ const Modal: FC<{ open: boolean, onClick: () => void }> = (props) => {
     useEffect(() => {
         const modal = modalRef.current;
         const closeButton = buttonRef.current;
-
-        if (!props.open) modal!.style.display = 'none';
-        if (props.open) modal!.style.display = 'block';
+        
+        props.open ? modal!.style.display = 'block' : modal!.style.display = 'none';
 
         closeButton?.addEventListener('click', () => {
             modal!.style.display = 'none';
