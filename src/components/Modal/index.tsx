@@ -4,6 +4,7 @@ import Card from "../Card";
 import { PIZZAS } from "@/utils/constants";
 import Input from "../Input";
 import Button from "../Button";
+import Carousel from "../Carousel";
 
 const Modal: FC<{ open: boolean, onClick: () => void }> = (props) => {
     const modalRef = useRef<HTMLDivElement>(null);
@@ -12,7 +13,7 @@ const Modal: FC<{ open: boolean, onClick: () => void }> = (props) => {
     useEffect(() => {
         const modal = modalRef.current;
         const closeButton = buttonRef.current;
-        
+
         props.open ? modal!.style.display = 'block' : modal!.style.display = 'none';
 
         closeButton?.addEventListener('click', () => {
@@ -26,15 +27,13 @@ const Modal: FC<{ open: boolean, onClick: () => void }> = (props) => {
                 <ModalClose src="/assets/icons/close-button.svg" ref={buttonRef} onClick={props.onClick} />
 
                 <ModalTitle><img src="/assets/icons/pizza-icon.svg" /><h2>Escolha sua pizza</h2></ModalTitle>
-                <Cards>
-                    <img src="/assets/icons/arrow-left.svg" />
+                <Carousel>
                     {
                         PIZZAS.map(pizza =>
                             <Card key={pizza.id} sabor={pizza.sabor} fatias={pizza.fatias} url={pizza.url}></Card>
                         )
                     }
-                    <img src="/assets/icons/arrow-right.svg" />
-                </Cards>
+                </Carousel>
 
                 <FormDelivery>
                     <div>
