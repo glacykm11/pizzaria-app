@@ -2,42 +2,42 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 
 interface ICarouselSlide {
-    active?: boolean;
+  active?: boolean;
 }
 
 interface ICarouselProps {
-    currentSlide: number;
+  currentSlide: number;
 }
 
 interface IProps {
-    children: JSX.Element[];
+  children: JSX.Element[];
 }
 
 const Carousel = ({ children }: IProps) => {
-    const [currentSlide, setCurrentSlide] = React.useState(0);
+  const [currentSlide, setCurrentSlide] = React.useState(0);
 
-    const activeSlide = children.map((slide, index) => (
-        <SCarouselSlide active={currentSlide === index} key={index}>
-            {slide}
-        </SCarouselSlide>
-    ));
+  const activeSlide = children.map((slide, index) => (
+    <SCarouselSlide active={currentSlide === index} key={index}>
+      {slide}
+    </SCarouselSlide>
+  ));
 
-    return (
-        <SCarousel>
-            <SCarouselWrapper>
-                <SCarouselSlides currentSlide={currentSlide}>
-                    {activeSlide}
-                </SCarouselSlides>
+  return (
+    <SCarousel>
+      <SCarouselWrapper>
+        <SCarouselSlides currentSlide={currentSlide}>
+          {activeSlide}
+        </SCarouselSlides>
 
-            </SCarouselWrapper>
-            <LeftArrow src="/assets/icons/arrow-left.svg" onClick={() => {
-                setCurrentSlide((currentSlide - 1 + activeSlide.length) % activeSlide.length);
-            }} />
-            <RightArrow src="/assets/icons/arrow-right.svg" onClick={() => {
-                setCurrentSlide((currentSlide + 1) % activeSlide.length);
-            }} />
-        </SCarousel>
-    );
+      </SCarouselWrapper>
+      <LeftArrow src="/assets/icons/arrow-left.svg" onClick={() => {
+        setCurrentSlide((currentSlide - 1 + activeSlide.length) % activeSlide.length);
+      }} />
+      <RightArrow src="/assets/icons/arrow-right.svg" onClick={() => {
+        setCurrentSlide((currentSlide + 1) % activeSlide.length);
+      }} />
+    </SCarousel>
+  );
 };
 
 const SCarousel = styled.div`
@@ -47,8 +47,8 @@ const SCarousel = styled.div`
 const SCarouselSlides = styled.div<ICarouselProps>`
   display: flex;
   ${props =>
-        props.currentSlide &&
-        css`
+    props.currentSlide &&
+    css`
       transform: translateX(-${props.currentSlide * 8}%);
     `};
   transition: all 0.5s ease;
@@ -73,6 +73,7 @@ const LeftArrow = styled.img`
   top: 45%;
   left: 0;
   opacity: 0.3;
+  cursor: pointer;
 
   :hover {
     opacity: 1;
@@ -85,6 +86,7 @@ const RightArrow = styled.img`
   top: 45%;
   right: 0;
   opacity: 0.3;
+  cursor: pointer;
 
   :hover {
     opacity: 1;
