@@ -22,7 +22,7 @@ export default Card;
 const CardStyled = styled.div`
   gap: 8px;
   width: 16rem;
-  min-height: 20rem;
+  min-height: 12rem;
   background-color: var(--secondary-color);
   border-radius: 8px;
   padding: 16px;
